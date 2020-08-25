@@ -1,0 +1,9 @@
+.loader-icon {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.loader-icon__image {
+    width: 48px;
+    height: 48px;
+}
