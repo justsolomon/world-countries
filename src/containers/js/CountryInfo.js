@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import Header from '../../components/js/Header';
 import '../css/CountryInfo.css';
 import Loader from '../../components/js/Loader';
+import { Helmet } from 'react-helmet';
 
 class CountryInfo extends Component {
     constructor() {
@@ -61,6 +62,18 @@ class CountryInfo extends Component {
         const { switchTheme, theme } = this.props;
         return (
             <div className='country-info-page'>
+                <Helmet>
+                    <title>{`${name} - World Countries`}</title>
+                    <meta
+                        name="description"
+                        content={`Check out information about ${name}`}
+                    />
+                    <meta property='og:title' content={`${name} - World Countries`} />
+                    <meta property='og:description' content={`Check out information about ${name}`} />
+                    <meta name='twitter:title' content={`${name} - World Countries`} />
+                    <meta name='twitter:description' content={`Check out information about ${name}`} />
+                </Helmet>
+
                 <Header switchTheme={switchTheme} theme={theme} />
                     <div className='country-info-page__inner'>
                         <div className='back-button' onClick={() => this.props.history.push('/')}>
