@@ -5,6 +5,7 @@ import { faSearch, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import CountryCardList from '../../components/js/CountryCardList';
 import '../css/Homepage.css';
 import Loader from '../../components/js/Loader';
+import { Helmet } from 'react-helmet';
 
 export default class HomePage extends Component {
     constructor() {
@@ -67,6 +68,18 @@ export default class HomePage extends Component {
 
         return (
             <div className='homepage'>
+                <Helmet>
+                    <title>World Countries</title>
+                    <meta
+                        name="description"
+                        content="Find information about all the countries in the world"
+                    />
+                    <meta name='twitter:title' content='World Countries' />
+                    <meta name='twitter:description' content='Find information about all the countries in the world' />
+                    <meta property='og:title' content='World Countries' />
+                    <meta property='og:description' content='Find information about all the countries in the world' />
+                </Helmet>
+
                 <Header switchTheme={switchTheme} theme={theme} />
                 <div className='homepage__action-menu'>
 
