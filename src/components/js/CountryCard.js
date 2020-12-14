@@ -6,8 +6,7 @@ const CountryCard = ({countryName, flagUrl, population, region, capital}) => {
     const history = useHistory();
     return (
         <div className='country-card' onClick={() => history.push(`/${countryName}`)}>
-            <div className='country-flag'>
-                <img src={flagUrl} alt={`National Flag of ${countryName}`} className='country-flag__image' />
+            <div className='country-flag' style={{backgroundImage: `url(${flagUrl})`}}>
             </div>
             <div className='country-info'>
                 <p className='country-name'>{countryName}</p>
