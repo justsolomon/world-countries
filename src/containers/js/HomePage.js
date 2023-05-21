@@ -20,7 +20,7 @@ export default class HomePage extends Component {
     }
 
     componentDidMount() {
-        fetch('https://restcountries.eu/rest/v2/all')
+        fetch('https://restcountries.eu/rest/v3.1/all')
             .then(res => res.json())
             .then(data => {
                 this.setState({
@@ -35,7 +35,7 @@ export default class HomePage extends Component {
     dropMenuDown = () => this.setState({ dropdownActive: !this.state.dropdownActive })
 
     filterByRegion = (region) => {
-        fetch(`https://restcountries.eu/rest/v2/region/${region}`)
+        fetch(`https://restcountries.eu/rest/v3.1/region/${region}`)
             .then(res => res.json())
             .then(data => {
                 this.setState({
