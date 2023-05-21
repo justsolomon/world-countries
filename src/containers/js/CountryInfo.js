@@ -22,7 +22,7 @@ class CountryInfo extends Component {
 
     componentDidMount() {
         const { country } = this.props.match.params;
-        fetch(`https://restcountries.eu/rest/v2/name/${country}?fullText=true`)
+        fetch(`https://restcountries.eu/rest/v3.1/name/${country}?fullText=true`)
             .then(res => res.json())
             .then(data => {
                 let currencies = '';
@@ -47,7 +47,7 @@ class CountryInfo extends Component {
     findCountryBorders = (borders) => {
         borders.forEach(border => {
             let { countryBorders } = this.state;
-            fetch(`https://restcountries.eu/rest/v2/alpha/${border}`)
+            fetch(`https://restcountries.eu/rest/v3.1/alpha/${border}`)
                 .then(res => res.json())
                 .then(data => {
                     countryBorders.push(data.name);
